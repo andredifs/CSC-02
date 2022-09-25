@@ -1,0 +1,22 @@
+.main {
+    font-family: Kanit;
+    text-align: center;
+    background-color: #D9D9D9;
+    padding: 10%;
+    margin: 0;
+    padding-top: 2%;
+    padding-bottom: 300px;
+}
+.card{
+    font-size: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 2%;
+    margin: 0 auto;
+    width: 300px;
+    box-shadow: 6px 6px 6px #888;
+}
+.button{
+    padding: 2%;
+
+}
