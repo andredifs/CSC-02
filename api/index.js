@@ -1,14 +1,7 @@
-import express from 'express';
-import cors from 'cors';
 import { dadosGov, weather } from './services/index.js';
 import { getMonthRange } from './utils/getMonth.js';
 
-const app = express();
-
-app.use(express.json());
-app.use(cors());
-
-app.get('/data', async (req, res) => {
+export default async function server(req, res) {
     const { state, month, year } = req.query;
 
     let results = {
@@ -52,8 +45,4 @@ app.get('/data', async (req, res) => {
     res.status(200).json({
         results,
     });
-});
-
-// app.listen(5000, () => { console.log('Server running on port 5000') });
-
-export default app;
+};
