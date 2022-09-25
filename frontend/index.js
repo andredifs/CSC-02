@@ -1,11 +1,7 @@
-
-
 async function getData() {
     const month = document.getElementById('month');
     const state = document.getElementById('state');
     const year = (new Date()).getFullYear();
-
-    console.log(month.value, state.value, year);
 
     const params = (new URLSearchParams({
         month: month.value,
@@ -13,9 +9,7 @@ async function getData() {
         year: year
     })).toString();
 
-    console.log(params)
-
-    fetch('http://localhost:3000/api/data?' + params, {
+    fetch('http://localhost:5000/data?' + params, {
         method : "GET",
     }).then(res => res.json())
     .then(data => displayResults(data.results));
