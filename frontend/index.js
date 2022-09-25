@@ -9,7 +9,7 @@ async function getData() {
         year: year
     })).toString();
 
-    fetch('http://localhost:3000/api/data?' + params, {
+    fetch('/api/data?' + params, {
         method : "GET",
     }).then(res => res.json())
     .then(data => displayResults(data.results));
