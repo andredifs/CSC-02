@@ -7,10 +7,6 @@
   "scripts": {
     "start": "node index.js"
   },
-  "workspaces": [
-    "api",
-    "frontend"
-  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
