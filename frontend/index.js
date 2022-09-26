@@ -1,12 +1,12 @@
 async function getData() {
+    const year = document.getElementById('year')
     const month = document.getElementById('month');
     const state = document.getElementById('state');
-    const year = (new Date()).getFullYear();
 
     const params = (new URLSearchParams({
         month: month.value,
         state: state.value,
-        year: year
+        year: year.value
     })).toString();
 
     fetch('/api/data?' + params, {
@@ -20,5 +20,5 @@ function displayResults(results) {
     const weather = document.getElementById('weather');
 
     gov.innerHTML = results.gov;
-    weather.innerHTML = results.weather;
+    weather.innerHTML = (Math.round(100*results.weather)/100).toString()+' °C';
 }
