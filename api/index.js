@@ -1,7 +1,10 @@
 import { dadosGov, weather } from './services/index.js';
 import { getMonthRange } from './utils/getMonth.js';
+import { Router } from 'express';
 
-export default async function api(req, res) {
+const api = Router();
+
+api.get('/data', async (req, res) => {
     const { month, state, year } = req.query;
 
     let results = {
@@ -55,4 +58,6 @@ export default async function api(req, res) {
     res.status(200).json({
         results,
     });
-};
+});
+
+export default api;

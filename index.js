@@ -1,6 +1,6 @@
+import api from './api/index.js';
 import express from 'express';
 import cors from 'cors';
-import api from './api/index.js';
 import path from 'path';
 import { fileURLToPath } from 'url';
 const PORT =  process.env.PORT || 3000;
@@ -15,6 +15,6 @@ app.use(cors());
 app.use(express.static(path.join(__dirname, 'frontend')))
     .get('/', (_, res) => res.render('frontend/index.html'));
 
-app.get('/api/data', api);
+app.use('/api', api);
 
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
