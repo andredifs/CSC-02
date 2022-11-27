@@ -1,9 +1,7 @@
 import axios from "axios";
 import states from "../utils/states.js";
 
-const instances = {};
-
-const weather = new Proxy(instances, {
+const weather = new Proxy({}, {
     get(_, state, receiver) {
         const coords = states[state];
 

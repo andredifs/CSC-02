@@ -9,10 +9,16 @@ async function getData() {
         year: year.value
     })).toString();
 
-    fetch('/api/data?' + params, {
-        method : "GET",
-    }).then(res => res.json())
-    .then(data => displayResults(data.results));
+    try {
+        fetch('/api/data?' + params, {
+            method : "GET",
+        })
+        .then(res => res.json())
+        .then(data => displayResults(data.results))
+        .catch(err => console.log(err));
+    } catch(err) {
+        console.log(err);
+    }
 }
 
 function displayResults(results) {

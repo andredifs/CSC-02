@@ -33,9 +33,7 @@ import axios from 'axios';
  * )} State
  */
 
-const instances = {};
-
-const dadosGov = new Proxy(instances, {
+const dadosGov = new Proxy({}, {
     get(_, state, receiver) {
         return receiver[state] = axios.create({
             baseURL: `https://elasticsearch-saps.saude.gov.br/desc-esus-notifica-estado-${state}/_count`,
