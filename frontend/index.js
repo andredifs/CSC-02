@@ -10,7 +10,7 @@ async function getData() {
     })).toString();
 
     try {
-        fetch('/api/data?' + params, {
+        fetch('/api/data-per-month?' + params, {
             method : "GET",
         })
         .then(res => res.json())
